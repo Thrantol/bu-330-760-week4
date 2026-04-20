@@ -46,7 +46,23 @@ def calculator_tool(expression: str) -> str:
 #     """Look up the price of a product by name.
 #     Use this when a question asks about product prices from the catalog.
 #     """
-#     ...
+@agent.tool_plain
+def product_lookup(product_name: str) -> str:
+    """Look up the price of a product by name.
+    
+    Examples: "Alpha Widget", "Beta Widget"
+    """
+    with open('products.json', 'r') as f:
+        products = json.load(f)
+    
+    search_name = product_name.strip().lower()
+    
+    for name, price in products.items():
+        if name.lower() == search_name:
+            return str(price)
+
+    available = ", ".join(products.keys())
+    return f"Product not found. Try one of these: {available}"
 
 
 def load_questions(path: str = "math_questions.md") -> list[str]:

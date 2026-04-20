@@ -33,3 +33,7 @@ The agent will work through each question in `math_questions.md` and print the R
 - `products.json` - product catalog with prices
 - `math_questions.md` - the questions the agent solves
 - `.env.example` - template for your API key
+
+### Project Walkthrough Video
+You can watch the video demonstration of this project here:
+[GenAI Homework 2 - Project Walkthrough](https://youtu.be/h3ldpe1L2K4)
